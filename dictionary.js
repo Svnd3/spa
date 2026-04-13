@@ -19,13 +19,14 @@ export function displayResults(data) {
   if (phonetic) {
     html += `<p class="phonetic">${phonetic}</p>`;
   }
-  phonetics.forEach((phonetic) => {
-    if (phonetic.audio) {
-      html += `<div class="audio">
-                    <button onclick="playAudio('${phonetic.audio}')">🔊 Play Pronunciation</button>
+  
+  // Find the first available audio URL
+  const audioUrl = phonetics.find(phonetic => phonetic.audio)?.audio;
+  if (audioUrl) {
+    html += `<div class="audio">
+                    <button onclick="playAudio('${audioUrl}')">🔊 Play Pronunciation</button>
                 </div>`;
-    }
-  });
+  }
   function formatWordList(label, items, className) {
     if (!items || items.length === 0) {
       return "";
