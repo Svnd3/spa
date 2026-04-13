@@ -19,9 +19,9 @@ export function displayResults(data) {
   if (phonetic) {
     html += `<p class="phonetic">${phonetic}</p>`;
   }
-  
+
   // Find the first available audio URL
-  const audioUrl = phonetics.find(phonetic => phonetic.audio)?.audio;
+  const audioUrl = phonetics.find((phonetic) => phonetic.audio)?.audio;
   if (audioUrl) {
     html += `<div class="audio">
                     <button onclick="playAudio('${audioUrl}')">🔊 Play Pronunciation</button>
