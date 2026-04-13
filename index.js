@@ -44,17 +44,28 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  function deleteWord(word) {
+    let saved = JSON.parse(localStorage.getItem("savedWords") || "[]");
+    saved = saved.filter((w) => w !== word);
+    localStorage.setItem("savedWords", JSON.stringify(saved));
+    displaySavedWords();
+  }
+
   function displaySavedWords() {
     const saved = JSON.parse(localStorage.getItem("savedWords") || "[]");
     savedList.innerHTML = saved
       .map(
         (word) =>
-          `<span class="saved-word" onclick="searchSavedWord('${word}')">${word}</span>`,
+          `<div class="saved-word-container">
+            <span class="saved-word" onclick="searchSavedWord('${word}')">${word}</span>
+            <button class="delete-btn" onclick="deleteWord('${word}')">×</button>
+          </div>`,
       )
       .join("");
   }
 
   window.saveWord = saveWord;
+  window.deleteWord = deleteWord;
   window.searchSavedWord = async function (word) {
     input.value = word;
     // Trigger search

@@ -1,9 +1,8 @@
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}  
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -63,13 +62,12 @@ input {
   outline: none;
   background-color: #fff;
   color: #2f2a25;
-  
 }
 
 button {
   padding: 16px 16px;
   font-size: 16px;
-  background-color: #2EC4B6;
+  background-color: #2ec4b6;
   color: #fff;
   border: none;
   border-radius: 16px;
@@ -78,7 +76,7 @@ button {
 }
 
 button:hover {
-  background-color: #1A1A2E;
+  background-color: #1a1a2e;
 }
 
 .results {
@@ -197,19 +195,42 @@ button:hover {
 .saved-list {
   display: flex;
   flex-wrap: wrap;
+  gap: 0;
+}
+
+.saved-word-container {
+  display: inline-flex;
+  align-items: center;
+  background-color: #2ec4b6;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  margin: 0.25rem;
   gap: 0.5rem;
 }
 
 .saved-word {
-  background-color: #2EC4B6;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  display: inline-block;
   cursor: pointer;
+  flex: 1;
 }
 
-.saved-word:hover {
-  background-color: #c8e6c9;
+.delete-btn {
+  background: none;
+  border: none;
+  color: #023020;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: rgba(2, 48, 32, 0.1);
 }
 
 .save-btn {
@@ -223,60 +244,60 @@ button:hover {
 }
 
 .save-btn:hover {
-  background-color: #2EC4B6;
+  background-color: #2ec4b6;
 }
-#theme{
-    display: none;
-}
-body:has(#theme:checked){
-    background-color: black;
-    color: white;
-}
-body{
-    transition: .4s ease-in;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    line-height: 1.6;
-}
-.toggle{
-    font-size: 25px;
+#theme {
+  display: none;
 }
 body:has(#theme:checked) {
-    background-color: #0f0f0f;
-    color: #ffffff;
+  background-color: black;
+  color: white;
+}
+body {
+  transition: 0.4s ease-in;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  line-height: 1.6;
+}
+.toggle {
+  font-size: 25px;
+}
+body:has(#theme:checked) {
+  background-color: #0f0f0f;
+  color: #ffffff;
 }
 
 body:has(#theme:checked) .results,
 body:has(#theme:checked) .saved-words {
-    background-color: #1a1a1a;
-    border: 1px solid #333;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
 }
 
 body:has(#theme:checked) .definition,
 body:has(#theme:checked) .phonetic,
 body:has(#theme:checked) .example {
-    color: #cccccc;
+  color: #cccccc;
 }
 
 body:has(#theme:checked) input {
-    background-color: #222;
-    color: #fff;
+  background-color: #222;
+  color: #fff;
 }
 body:has(#theme:checked) button {
-    background-color: #2EC4B6;
-    color: #000;
+  background-color: #2ec4b6;
+  color: #000;
 }
 
 body:has(#theme:checked) .synonyms span,
 body:has(#theme:checked) .antonyms span {
-    background-color: #333;
-    color: #eee;
+  background-color: #333;
+  color: #eee;
 }
 body:has(#theme:checked) .saved-word {
-    background-color: #2EC4B6;
-    color: #000;
+  background-color: #2ec4b6;
+  color: #000;
 }
 body:has(#theme:checked) .saveword {
-  color :#2EC4B6
+  color: #2ec4b6;
 }
 .footer {
   text-align: center;
@@ -286,12 +307,10 @@ body:has(#theme:checked) .saveword {
 }
 
 .footer a {
-  color: #4CAF50;
+  color: #4caf50;
   text-decoration: none;
 }
 
 .footer a:hover {
   text-decoration: underline;
 }
-
-
